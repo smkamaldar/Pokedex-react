@@ -7,7 +7,7 @@ const BestPokeman = (props) => {
       <div>
         <p>My favorite pokeman is Squirtle</p>
         <ul>
-        {abilities.map((item)=><li>{item}</li>)}
+        {abilities.map((item, index)=><li key={index}>{item}</li>)}
         </ul>
       </div>
     );

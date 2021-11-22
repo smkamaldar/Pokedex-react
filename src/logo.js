@@ -5,7 +5,7 @@ const Logo = (props) => {
     return (
       <header>
         <h1>Welcome to {appName}</h1>
-        <img alt="pokedex" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png"></img>
+        <img onClick={props.onClick} alt="pokedex" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png"></img>
       </header>
     );
   };
