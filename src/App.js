@@ -1,6 +1,8 @@
 import Logo from "./logo";
 import BestPokeman from "./BestPokeman";
 import CaughtPokemon from "./CaughtPokeman";
+import PokemonMovesSelector from "./PokemonMovesSelector";
+import PokemonCity from "./PokemanCity";
 
 
 
@@ -17,6 +19,8 @@ function App() {
       <Logo onClick={logWhenClicked} appName = "Elmira's Pokedex" />
       <BestPokeman abilities={abilities}/>
       <CaughtPokemon date= {date}/>
+      <PokemonMovesSelector />
+      <PokemonCity />
     </div>
   );
 }

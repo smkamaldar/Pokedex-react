@@ -4,15 +4,20 @@ import { useState } from "react";
 const CaughtPokemon = (props) => {
   const { date } = props;
   const [caught, setCaught] = useState([]);
+  const [pokemonNameInput,setPokemonNameInput]=useState("");
+  const handleInputChange =(e)=>{
+      setPokemonNameInput(e.target.value);
+  };
   // it adds to the caught state
-  const handleButtonClick = () => {
-    setCaught(caught.concat(GetRandom()));
+  const catchPokemon = () => {
+    // setCaught(caught.concat(pokemonNameInput));
+    setCaught([...caught,pokemonNameInput]);
   };
-  const GetRandom = () => {
-    const animals = ["Eevee", "Sprearow", "Ditto", "Butterfree"];
-    const random = Math.floor(Math.random() * animals.length);
-    return animals[random];
-  };
+  // const GetRandom = () => {
+  //   const animals = ["Eevee", "Sprearow", "Ditto", "Butterfree"];
+  //   const random = Math.floor(Math.random() * animals.length);
+  //   return animals[random];
+  // };
 
   return (
     <div>
@@ -22,7 +27,8 @@ const CaughtPokemon = (props) => {
           return <li>{animal}</li>;
         })}
       </ul>
-      <button onClick={handleButtonClick}> catch Pokemon</button>
+      <input type="text" value={pokemonNameInput} onChange={handleInputChange}/>
+      <button onClick={catchPokemon}> catch Pokemon</button>
     </div>
   );
 };
